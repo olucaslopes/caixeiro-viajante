@@ -12,7 +12,9 @@ O Problema do Caixeiro Viajante é um problema que tenta determinar a menor rota
 
 O dataset [cidades_sp.tsv](./cidades_sp.tsv) foi gerado por mim com base no caderno [Mapas2.ipynb](./material-de-apoio/Mapas2.ipynb) disponibilizado pelo professor como material de apoio. Ele apresenta a distância entre municípios do estado de São Paulo para cada um dos municípios
 
-> ⚠ Importante: O ponto que representa cada município foi definido como o centro geográfico de cada município
+> ⚠ Importante
+> - O **ponto** que representa cada município foi definido como o **centro geográfico** de cada município
+> - As **distâncias** calculadas são as distâncias em **linha reta** entre os centros geográficos e não a distância real via estrada, por exemplo
 
 Amostra do dataset:
 
@@ -42,14 +44,24 @@ Cidades escolhidas para o desafio: `Sarapuí`, `Sarutaiá`, `Sebastianópolis do
 
 ## 6. Resultados:
 
-A menor rota que sai da capital paulista e passa por todas as cidades selecionadas tem 1892 km de extenção
+A menor rota que sai da capital paulista e passa por todas as cidades selecionadas e volta para a capital tem 1892 km de extenção
 
 Rota: `São Paulo` → `São Vicente` → `São Sebastião` → `Silveiras` → `Serra Negra` → `São Sebastião da Grama` → `São Simão` → `Serra Azul` → `Serrana` → `Sertãozinho` → `Severínia` → `Sebastianópolis do Sul` → `Sud Mennucci` → `São Pedro do Turvo` → `Sarutaiá` → `São Pedro` → `Sarapuí` → `Sete Barras` → `Sorocaba` → `São Roque` → `São Paulo`
 
+
+### Grafo da solução
+- cada nó (node) representa uma cidade
+- os valores dos vértices (edges) representam a distância entre dois nós
+- a distribuição espacial não reflete a distribuição geográfica real
 <p align="center">
   <img src="./img/grafo-rota.png" width=60%/>
 </p>
 
+### Mapa da solução
+- distribuição espacial real dos pontos
+- as retas em vermelho representam a distância considerada entre os municípios
+- o ponto em vermelho representa o município de São Paulo, que é o ponto de partida e o ponto final de chegada da rota
+- os pontos em azul representam os demais municípios
 <p align="center">
   <img src="./img/mapa-rota.png" width=80%/>
 </p>
@@ -65,6 +77,7 @@ Uma vez que desenvolvi um método para calcular as distâncias entre uma amostra
 
 Contudo, tais implementações irão precisar de um poder computacional muito maior para resolver o problema na mesma escala de tempo que a solução desse projeto. Para uma solução em força-bruta, a escala de complexidade desse problema é $O(n!)$
 
+Por fim, ao invés de considerar a distância em linha reta entre os municípios, podemos calcular a distância entre eles pela estrada e isso resultaria em um resultado mais preciso.
 
 ## Referências
 
