@@ -8,7 +8,11 @@ Algoritmo de busca da menor rota entre 20 municípios paulistas
 
 O Problema do Caixeiro Viajante é um problema que tenta determinar a menor rota para percorrer uma série de cidades (visitando uma única vez cada uma delas), retornando à cidade de origem. Ele é um problema de otimização NP-difícil inspirado na necessidade dos vendedores em realizar entregas em diversos locais (as cidades) percorrendo o menor caminho possível, reduzindo o tempo necessário para a viagem e os possíveis custos com transporte e combustível. [(1)](#referências)
 
-## 2. Descrição dos Dados
+## 2. Objetivo do Projeto
+
+O objetivo deste projeto é desenvolver um algorítmo que encontre a melhor rota entre pelo menos 20 cidades do estado de São Paulo, partindo da capital e retornando a ela no final, sem repetição de cidades (problema do caixeiro viajante). Caso o número de cidades seja inferior a 20, o projeto deve permitir que o usuário especifique quais cidades serão utilizadas no cálculo. Será necessário utilizar um algoritmo de preferência do desenvolvedor e criar um mapa para ilustrar a solução obtida. O objetivo final é apresentar uma solução precisa e visualmente atraente para o problema proposto.
+
+## 3. Descrição dos Dados
 
 O dataset [cidades_sp.tsv](./cidades_sp.tsv) foi gerado por mim com base no caderno [Mapas2.ipynb](./material-de-apoio/Mapas2.ipynb) disponibilizado pelo professor como material de apoio. Ele apresenta a distância entre municípios do estado de São Paulo para cada um dos municípios
 
@@ -26,15 +30,6 @@ Amostra do dataset:
 | Adamantina | Águas da Prata | 453.052818 |
 | Adamantina | Águas de Lindóia | 470.358245 |
 
-## 3. Requisitos do Projeto
-
-Encontre a melhor rota, começando pela capital e retornando até ela no final (problema do caixeiro viajante), sem repetição de cidades, entre pelo menos 20 cidades do estado de São Paulo.
-
-Em caso de menos cidades que o total, crie uma forma de especificar quais cidades serão usadas para o cálculo.
-
-- Uso o algoritmo de sua preferência.
-- Crie um mapa para ilustrar a solução obtida
-
 ## 4. Proposta de solução
 
 Cidades escolhidas para o desafio: `Sarapuí`, `Sarutaiá`, `Sebastianópolis do Sul`, `Serra Azul`,`Serra Negra`, `Serrana`, `Sertãozinho`, `Sete Barras`, `Severínia`,`Silveiras`, `Sorocaba`, `Sud Mennucci`, `São Paulo`, `São Pedro`,`São Pedro do Turvo`, `São Roque`, `São Sebastião`,`São Sebastião da Grama`, `São Simão`, `São Vicente`
@@ -42,7 +37,7 @@ Cidades escolhidas para o desafio: `Sarapuí`, `Sarutaiá`, `Sebastianópolis do
 - Solver: pywrapcp.RoutingModel [(2)](#referências)
 - Frameworks usados: [OR-Tools](https://developers.google.com/optimization), [pandas](https://pandas.pydata.org/docs/), [numpy](https://numpy.org/doc/), [geopandas](https://geopandas.org/en/stable/docs.html), [networkx](https://networkx.org/), [folium](https://python-visualization.github.io/folium/), [matplotlib](https://matplotlib.org/stable/index.html)
 
-## 6. Resultados:
+## 5. Resultados:
 
 A menor rota que sai da capital paulista e passa por todas as cidades selecionadas e volta para a capital tem 1892 km de extenção
 
@@ -66,7 +61,7 @@ Rota: `São Paulo` → `São Vicente` → `São Sebastião` → `Silveiras` → 
   <img src="./img/mapa-rota.png" width=80%/>
 </p>
 
-## 7. Oportunidades futuras
+## 6. Oportunidades futuras
 
 Uma vez que desenvolvi um método para calcular as distâncias entre uma amostra das cidades do estado, uma oportunidade futura é calcular cenários sem restrições de quantidade de cidades, por exemplo:
 
